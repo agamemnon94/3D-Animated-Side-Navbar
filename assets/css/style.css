@@ -1,0 +1,80 @@
+/******   reset  *******/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Spartan", Helvetica, sans-serif;
+}
+
+:root {
+  --black: #000;
+  --dark: rgb(41, 41, 41);
+  --a_color: coral;
+  --light_black: rgba(0, 0, 0, 0.333);
+  --grey: #666;
+}
+/********************/
+/*** GENERALITES  ***/
+/********************/
+html {
+  background: white;
+  font-size: 62.5%;
+}
+body {
+  position: relative;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--dark);
+  padding-top: 90px;
+}
+h1 {
+  font-size: 6rem;
+  margin: 3rem 0;
+  text-align: center;
+  color: lightskyblue;
+  text-shadow: 1px 1px 15px#000;
+}
+/******************/
+/****** MAIN ******/
+/******************/
+.navbar_container {
+  height: 100%;
+  margin-left: 90px;
+}
+.navbar_ul {
+  width: 1px;
+  list-style: none;
+  perspective: 500px;
+}
+.navbar_li {
+  transform: rotateY(30deg) scaleX(1.3);
+  transform-origin: left;
+  transition: 0.3s;
+  margin: 2rem 0 0 2rem;
+  list-style: none;
+}
+
+.navbar_li a {
+  text-decoration: none;
+  line-height: 1.1;
+  font-size: 6rem;
+  opacity: 0.6;
+  padding: 5px 20px;
+  border-radius: 4px;
+  color: var(--a_color);
+  background: var(--grey);
+  box-shadow: 1px 1px 15px var(--black);
+}
+.navbar_li:hover {
+  transform: rotateY(3deg);
+}
+
+.navbar_ul:hover .navbar_li:not(:hover) {
+  opacity: 0.5;
+}
+.navbar_li a.active,
+.navbar_li a:hover {
+  opacity: 1;
+}
